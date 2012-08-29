@@ -1,0 +1,4 @@
+div-title-tag=tag:title
+div-content-tag=class:topic_detail
+div-zone-tag=allclass:Subject
+div-category-tag=class:ctlTopicContent_hlkCatTitle

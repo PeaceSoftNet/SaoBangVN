@@ -1,0 +1,10 @@
+div-title-tag=tag:h1
+div-content-tag=class:messageContent
+div-content-type=html
+div-zone-tag=class:discussionListItems
+div-category-tag=class:crumbs
+div-location-tag=tag:h1
+div-mobile-tag=class:messageContent
+div-mobile-regex=(?i)\\d{10,12}
+div-email-tag=class:messageContent
+div-email-regex=(?i)[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})

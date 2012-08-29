@@ -1,0 +1,12 @@
+div-title-tag=tag:h1
+div-content-tag=id:noidung
+div-content-type=html
+div-zone-tag=class:center
+div-category-tag=class:duongdan
+div-location-tag=class:duongdan
+div-mobile-tag=class:stcon
+div-mobile-regex=(?i)\\d{10,12}
+div-price-tag=class:stcon
+div-price-regex=(?i)\\d{1,3}[\\.\\d{0,3}]+
+div-email-tag=class:stcon
+div-email-regex=(?i)[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})

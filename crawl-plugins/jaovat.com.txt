@@ -1,0 +1,8 @@
+div-title-tag=tag:title
+div-content-tag=id:description-text
+div-content-type=html
+div-zone-tag=id:itemListContent
+div-category-tag=class:breadcrumb
+div-mobile-tag=id:item-data
+div-address-tag=id:item-data
+div-location-tag=id:item-data

@@ -1,0 +1,3 @@
+div-content-tag=id:description
+div-zone-tag=id:box-left-center
+div-category-tag=id:box-path

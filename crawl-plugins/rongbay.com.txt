@@ -1,0 +1,10 @@
+div-title-tag=tag:h1
+div-content-tag=id:NewsContent
+div-content-type=html
+div-zone-tag=class:NewsList
+div-category-tag=id:box-path
+div-location-tag=id:box-path
+div-mobile-tag=id:NewsContent
+div-mobile-regex=(?i)\\d{10,12}
+div-email-tag=id:NewsContent
+div-email-regex=(?i)[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})

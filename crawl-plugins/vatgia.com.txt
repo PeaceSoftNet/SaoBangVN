@@ -1,0 +1,12 @@
+div-title-tag=tag:h1
+div-content-tag=id:raovat_description
+div-content-type=html
+div-zone-tag=class:raovat_listing_fashion
+div-category-tag=class:navigation
+div-mobile-tag=class:poster_information
+div-address-tag=class:poster_information
+div-location-tag=class:raovat_information
+div-price-tag=class:raovat_information
+div-price-regex=(?i)\\d{1,3}[\\.\\d{0,3}]+
+div-email-tag=class:poster_information
+div-email-regex=(?i)[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})

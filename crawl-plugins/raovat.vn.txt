@@ -1,0 +1,5 @@
+div-title-tag=tag:title
+div-content-tag=id:detailItem
+div-content-type=html
+div-zone-tag=class:tableList
+div-category-tag=tag:h2
