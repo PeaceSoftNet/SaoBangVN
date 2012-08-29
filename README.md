@@ -1,6 +1,6 @@
-SaoBangVN
-=========
+nutch-index-crawl
+=================
 
-Dự án Saobang.vn
+Apache Nutch Plugin for SaobangVN
 
 tuanta2@peacesoft.net
