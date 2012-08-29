@@ -1,8 +1,7 @@
-Raovat Crawler
-==============
+nutch-urlfilter-domain
+======================
 
-
-Customzine Apache Nutch for Crawler domain site
+Apache Nutch Plugin for SaobangVN
 
 
 tuanta2@peacesoft.net
