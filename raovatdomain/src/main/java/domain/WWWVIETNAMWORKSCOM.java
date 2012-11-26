@@ -1,9 +1,6 @@
 package domain;
 
 import net.htmlparser.jericho.Element;
-import net.htmlparser.jericho.Source;
-import net.htmlparser.jericho.TextExtractor;
-import org.slf4j.Logger;
 
 public class WWWVIETNAMWORKSCOM extends BaseDomain {
 

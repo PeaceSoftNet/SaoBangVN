@@ -17,9 +17,6 @@ package domain;
 
 import java.util.List;
 import net.htmlparser.jericho.Element;
-import net.htmlparser.jericho.Source;
-import net.htmlparser.jericho.TextExtractor;
-import org.slf4j.Logger;
 
 public class MANGTIMVIECCOM extends BaseDomain {
 
