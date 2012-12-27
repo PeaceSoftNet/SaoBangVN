@@ -3,11 +3,8 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 import net.htmlparser.jericho.Element;
-import net.htmlparser.jericho.Renderer;
-import net.htmlparser.jericho.Source;
 import net.peacesoft.nutch.parse.URLCanonicalizer;
 import org.apache.nutch.parse.Outlink;
-import org.slf4j.Logger;
 
 public class MUAREVN extends BaseDomain {
 

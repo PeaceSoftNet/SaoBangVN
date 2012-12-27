@@ -1,5 +1,7 @@
 package domain;
 
+import domain.common.CURL;
+import java.io.ByteArrayInputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
@@ -47,6 +49,7 @@ public class BaseDomain
     protected String url;
     protected Configuration conf;
     protected FileSystem fs;
+    protected boolean isSOCK5 = false;
 
     public void setConf(Configuration conf) {
         this.conf = conf;
@@ -67,6 +70,9 @@ public class BaseDomain
             this.properties = new Properties();
             this.properties.load(new InputStreamReader(this.fs.open(file)));
         }
+        this.isSOCK5 = getConf().getBoolean("crawl.sock5", false);
+        this.CONNECT_TIMEOUT = getConf().getInt("parser.timeout", this.CONNECT_TIMEOUT);
+        this.READ_TIMEOUT = getConf().getInt("parser.timeout", this.READ_TIMEOUT);
     }
 
     protected String getValue(String key) throws Exception {
@@ -124,7 +130,7 @@ public class BaseDomain
                 }
             }
         } catch (Exception ex) {
-            LOG.warn("Parse title from " + this.url + " error:" + ex.toString(), ex);
+            LOG.warn(new StringBuilder().append("Parse title from ").append(this.url).append(" error:").append(ex.toString()).toString(), ex);
         }
         return "";
     }
@@ -133,25 +139,38 @@ public class BaseDomain
         try {
             String value = getValue(this.CONTENT_PARAM);
             String type = getValue(this.CONTENT_TYPE_PARAM);
-            String[] params = value.split(":");
-            if ((params != null) && (params.length == 2)) {
-                Element element = null;
-                if (params[0].equalsIgnoreCase("id")) {
-                    element = this.source.getElementById(params[1]);
-                } else if (params[0].equalsIgnoreCase("class")) {
-                    element = this.source.getFirstElementByClass(params[1]);
-                } else if (params[0].equalsIgnoreCase("tag")) {
-                    element = this.source.getFirstElement(params[1]);
-                }
-                if (element != null) {
-                    if (type.equalsIgnoreCase("html")) {
-                        return element.toString();
+
+            StringBuilder sb = new StringBuilder("");
+            String[] sourceElements = value.split(",");
+            for (String tmp : sourceElements) {
+                String[] params = tmp.split(":");
+                if ((params != null) && (params.length == 2)) {
+                    Element element;
+                    if (params[0].equalsIgnoreCase("id")) {
+                        element = this.source.getElementById(params[1]);
+                    } else {
+                        if (params[0].equalsIgnoreCase("class")) {
+                            element = this.source.getFirstElementByClass(params[1]);
+                        } else {
+                            if (params[0].equalsIgnoreCase("tag")) {
+                                element = this.source.getFirstElement(params[1]);
+                            } else {
+                                element = this.source.getFirstElement(params[0], params[1], true);
+                            }
+                        }
                     }
-                    return element.getTextExtractor().toString();
+                    if (element != null) {
+                        if (type.equalsIgnoreCase("html")) {
+                            sb.append(element.toString());
+                        } else {
+                            sb.append(element.getTextExtractor().toString());
+                        }
+                    }
                 }
             }
+            return sb.toString();
         } catch (Exception ex) {
-            LOG.warn("Parse content from " + this.url + " error:" + ex.toString(), ex);
+            LOG.warn(new StringBuilder().append("Parse content from ").append(this.url).append(" error:").append(ex.toString()).toString(), ex);
         }
         return "";
     }
@@ -219,7 +238,7 @@ public class BaseDomain
                 }
             }
         } catch (Exception ex) {
-            LOG.warn("Parse out links from " + this.url + " error:" + ex.toString(), ex);
+            LOG.warn(new StringBuilder().append("Parse out links from ").append(this.url).append(" error:").append(ex.toString()).toString(), ex);
         }
         Outlink[] tmp = new Outlink[outlinks.size()];
         return (Outlink[]) outlinks.toArray(tmp);
@@ -227,13 +246,26 @@ public class BaseDomain
 
     public void parse(String url) throws Exception {
         URL base = new URL(url);
-        URLConnection conn = base.openConnection();
+        if (base.getHost().contains("timviecnhanh.com")) {
+            this.source = getSourceBy(new CURL(base, this.isSOCK5));
+        } else if (base.getHost().contains("batdongsan.com.vn")) {
+            this.source = getSourceBy(new CURL(base, this.isSOCK5));
+        } else {
+            this.source = getSourceBy(base.openConnection());
+        }
+        this.url = url;
+        this.contextURL = new StringBuilder().append("http://").append(base.getHost()).toString();
+    }
+
+    private Source getSourceBy(URLConnection conn) throws Exception {
         conn.setConnectTimeout(this.CONNECT_TIMEOUT);
         conn.setReadTimeout(this.READ_TIMEOUT);
         conn.setRequestProperty("User-Agent", this.USER_AGENT);
-        this.url = url;
-        this.source = new Source(conn);
-        this.contextURL = ("http://" + base.getHost());
+        return new Source(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+    }
+
+    private Source getSourceBy(CURL base) throws Exception {
+        return new Source(new ByteArrayInputStream(base.getContent()));
     }
 
     public String getThumb() {
@@ -259,7 +291,7 @@ public class BaseDomain
                 }
             }
         } catch (Exception ex) {
-            LOG.warn("Parse thumb from " + this.url + " error:" + ex.toString(), ex);
+            LOG.warn(new StringBuilder().append("Parse thumb from ").append(this.url).append(" error:").append(ex.toString()).toString(), ex);
         }
         return "";
     }
