@@ -1,0 +1,11 @@
+div-title-tag=tag:h2
+div-content-tag=class:content
+div-content-type=html
+div-zone-tag=tag:form
+div-category-tag=class:content
+div-location-tag=class:content
+div-mobile-tag=class:content
+div-mobile-regex=(?i)\\d{10,12}
+div-email-tag=class:content
+div-email-regex=(?i)[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})
+

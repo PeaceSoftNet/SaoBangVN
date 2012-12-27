@@ -1,0 +1,12 @@
+div-title-tag=tag:h2
+div-content-tag=id:other
+div-content-type=html
+div-zone-tag=id:tab_all3
+div-category-tag=id:tab_nav
+div-location-tag=id:other
+div-price-tag=id:other
+div-price-regex=(?i)\\d{1,3}[\\,\\d{0,3}]+\\(Tr
+div-mobile-tag=id:other
+div-mobile-regex=(?i)\\d{10,12}
+div-email-tag=id:other
+div-email-regex=(?i)[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})

@@ -1,0 +1,10 @@
+div-title-tag=class:jobTitle
+div-content-tag=class:job_post_data
+div-content-type=html
+div-zone-tag=id:joblist
+div-category-tag=class:job_post_data
+div-location-tag=class:job_post_data
+div-mobile-tag=class:job_post_data
+div-mobile-regex=(?i)\\d{10,12}
+div-email-tag=class:job_post_data
+div-email-regex=(?i)[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})

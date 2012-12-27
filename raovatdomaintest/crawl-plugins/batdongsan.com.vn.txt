@@ -1,0 +1,11 @@
+div-title-tag=tag:h1
+div-content-tag=tag:pre
+div-content-type=html
+div-zone-tag=id:divlistProduct
+div-category-tag=class:breadcrumbs
+div-location-tag=class:breadcrumbs
+div-mobile-tag=id:info
+div-mobile-regex=(?i)\\d{10,12}
+div-email-tag=id:info
+div-email-regex=(?i)[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})
+

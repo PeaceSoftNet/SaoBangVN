@@ -1,0 +1,10 @@
+div-title-tag=tag:h1
+div-content-tag=class:main_content
+div-content-type=html
+div-zone-tag=id:main_page
+div-category-tag=class:jobsLeft
+div-location-tag=class:main_content
+div-mobile-tag=class:main_content
+div-mobile-regex=(?i)\\d{10,12}
+div-email-tag=class:main_content
+div-email-regex=(?i)[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})

@@ -1,0 +1,11 @@
+div-title-tag=tag:h1
+div-content-tag=class:c3-bc-mid-contents
+div-content-type=html
+div-zone-tag=class:c2-box
+div-category-tag=class:c2-tit-top
+div-address-tag=class:c3-aut-ct
+div-location-tag=class:c3-bc-mid
+div-mobile-tag=class:c3-bc-mid-contents
+div-mobile-regex=(?i)\\d{10,12}
+div-email-tag=class:c3-bc-mid-contents
+div-email-regex=(?i)[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})

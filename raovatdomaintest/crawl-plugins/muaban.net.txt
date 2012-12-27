@@ -1,0 +1,4 @@
+div-title-tag=tag:title
+div-content-tag=class:content
+div-content-type=html
+div-zone-tag=class:listing

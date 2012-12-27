@@ -1,0 +1,14 @@
+div-title-tag=class:product-name clearfix
+div-content-tag=class:content-desc-product
+div-content-type=html
+#div-zone-tag=id:fashion_show_view
+div-zone-tag=class:r-c
+div-category-tag=class:header-category-nav
+div-location-tag=class:info-product-detail
+div-mobile-tag=class:summary-info-inside clearfix
+div-mobile-regex=(?i)\\d{10,12}
+div-address-tag=class:summary-info-inside clearfix
+div-price-tag=class:info-product-detail
+div-price-regex=(?i)\\d{1,3}[\\.\\d{0,3}]+
+div-email-tag=class:content-desc-produc
+div-email-regex=(?i)[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})

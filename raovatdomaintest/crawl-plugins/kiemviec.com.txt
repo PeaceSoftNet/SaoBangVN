@@ -1,0 +1,12 @@
+div-title-tag=tag:h2
+div-content-tag=id:col3_content
+div-content-type=html
+div-zone-tag=id:layer1
+div-category-tag=class:nav
+div-location-tag=class:nav
+div-price-tag=class:outofdate
+div-price-regex=(?i)\\d{1,3}[\\.\\d{0,3}]
+div-mobile-tag=class:outofdate
+div-mobile-regex=(?i)\\d{10,12}
+div-email-tag=class:outofdate
+div-email-regex=(?i)[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})

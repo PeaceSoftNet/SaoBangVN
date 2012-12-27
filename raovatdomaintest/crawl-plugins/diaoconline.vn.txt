@@ -1,0 +1,7 @@
+div-title-tag=tag:h1
+div-content-tag=class:InfoDetail
+div-content-type=html
+div-zone-tag=class:listingStyle2
+div-category-tag=class:StructureC
+div-location-tag=tag:h2
+div-address-tag=tag:h2

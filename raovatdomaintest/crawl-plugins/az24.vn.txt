@@ -1,0 +1,9 @@
+div-title-tag=class:clblue
+div-content-tag=id:data_des
+div-content-type=html
+div-zone-tag=class:list-new
+div-category-tag=class:path clearfix
+div-location-tag=class:r-list3
+div-mobile-tag=class:list3 last
+div-mobile-regex=(?i)\\d{10,12}
+div-address-tag=class:list3 last
